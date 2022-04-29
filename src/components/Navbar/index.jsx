@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
-import { Container, NavDiv } from "./style";
+import { Container, Icon, Logo, NavDiv, Select } from "./style";
+import Group from "../../assets/img/Group.png";
 
 class Navbar extends Component {
   render() {
@@ -15,13 +16,24 @@ class Navbar extends Component {
               className="navlink"
               style={({ isActive }) => ({
                 color: isActive ? "#5ECE7B" : "#000000",
-                borderBottom: isActive ? "1px solid #5ECE7B" : "none",
+                borderBottom: isActive ? "2px solid #5ECE7B" : "none",
                 fontWeight: isActive ? "600" : "400",
               })}
             >
               <NavDiv>{value.title}</NavDiv>
             </NavLink>
           ))}
+          <NavDiv style={{ width: "65%" }}>
+            <Logo src={Group} alt="Logo" />
+          </NavDiv>
+          <NavDiv>
+            <Select>
+              <option value="USD">$</option>
+              <option value="EUR">€</option>
+              <option value="JPY">¥</option>
+            </Select>
+            <Icon />
+          </NavDiv>
         </Container>
         <Outlet />
       </div>

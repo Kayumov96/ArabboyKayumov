@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Vector } from "../../assets/icons/Vector.svg";
 
 const Container = styled.div`
   display: flex;
@@ -6,6 +7,7 @@ const Container = styled.div`
   align-items: center; */
   width: 100%;
   height: 80px;
+  justify-content: space-between;
 `;
 const NavDiv = styled.div`
   width: 100px;
@@ -16,4 +18,17 @@ const NavDiv = styled.div`
   font-size: 16px;
   line-height: 19px;
 `;
-export { Container, NavDiv };
+const Logo = styled.img`
+  width: 31px;
+  height: 28px;
+`;
+const Icon = styled(Vector)`
+  width: 20px;
+  height: 18px;
+`;
+const Select = styled.select`
+  outline: none;
+  border: none;
+  margin-right: 8px;
+`;
+export { Container, NavDiv, Logo, Icon, Select };

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@500&display=swap");
 body {
   margin: 0;
+  padding: 0 100px;
   font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
