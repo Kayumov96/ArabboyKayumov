@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 class Women extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <h1>Women</h1>
+      </div>
+    );
   }
 }
 
