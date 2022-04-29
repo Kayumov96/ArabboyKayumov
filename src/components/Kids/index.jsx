@@ -4,7 +4,7 @@ class Kids extends Component {
   render() {
     return (
       <div>
-        <h1>Kids</h1>
+        <h1>Category name</h1>
       </div>
     );
   }
