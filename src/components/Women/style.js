@@ -16,6 +16,11 @@ const Header = styled.div`
   font-weight: 400;
   color: #1d1f22;
 `;
+//   const getSize({type})=>(
+//   switch(type=== mini){
+
+//   }
+//   )
 const Card = styled.div`
   margin: auto;
   display: flex;
@@ -27,9 +32,25 @@ const Card = styled.div`
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
   }
 `;
+const getSize = ({ type }) => {
+  return;
+};
 const CardImg = styled.img`
   width: 98%;
   height: 80%;
 `;
+const AddCard = styled.button`
+  width: 50px;
+  height: 50px;
+  /* top: 50px; */
+  /* right: 3px; */
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(94, 206, 123, 1);
+  position: absolute;
+`;
 
-export { Container, Header, Card, CardImg };
+export { Container, Header, Card, CardImg, AddCard };
