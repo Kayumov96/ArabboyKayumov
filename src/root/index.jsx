@@ -18,7 +18,7 @@ class Root extends Component {
               />
             ))}
           </Route>
-          <Route path="*" element={<Error />} />
+          <Route exact path="*" element={<Error />} />
         </Routes>
       </div>
     );

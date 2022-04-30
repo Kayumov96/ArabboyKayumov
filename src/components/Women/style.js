@@ -23,6 +23,7 @@ const Header = styled.div`
 //   )
 const Card = styled.div`
   margin: auto;
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -32,9 +33,9 @@ const Card = styled.div`
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
   }
 `;
-const getSize = ({ type }) => {
-  return;
-};
+// const getSize = ({ type }) => {
+//   return;
+// };
 const CardImg = styled.img`
   width: 98%;
   height: 80%;
@@ -42,8 +43,8 @@ const CardImg = styled.img`
 const AddCard = styled.button`
   width: 50px;
   height: 50px;
-  /* top: 50px; */
-  /* right: 3px; */
+  top: 68%;
+  right: 8%;
   border-radius: 50%;
   border: none;
   display: flex;

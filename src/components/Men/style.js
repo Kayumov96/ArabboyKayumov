@@ -18,6 +18,7 @@ const Header = styled.div`
 `;
 const Card = styled.div`
   margin: auto;
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -36,6 +37,8 @@ const AddCard = styled.button`
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  top: 68%;
+  right: 8%;
   border: none;
   display: flex;
   align-items: center;
