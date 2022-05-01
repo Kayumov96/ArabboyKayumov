@@ -10,16 +10,12 @@ class Women extends Component {
         <Header>Category name</Header>
         {/* <h1>Category name</h1> */}
         {women.map((value) => (
-          <Card key={value.id}>
+          <Card key={value.id} className="card">
             <CardImg src={value.src} />
-            <AddCard>
-              <img
-                style={{ position: "absolute", width: "20px" }}
-                src={Vectorcopy}
-                alt="hey"
-              />
+            <AddCard className="mini">
+              <CardImg cart src={Vectorcopy} alt="hey" />
             </AddCard>
-            <div>{value.title}</div>
+            <Header mini>{value.title}</Header>
             <h4>{value.price}</h4>
           </Card>
         ))}

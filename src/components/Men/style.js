@@ -11,9 +11,10 @@ const Container = styled.div`
 `;
 const Header = styled.div`
   width: 100%;
-  height: 50px;
-  font-size: 40px;
-  font-weight: 400;
+  margin: 10px 0;
+  height: ${({ mini }) => (mini ? "26px" : "50px")};
+  font-size: ${({ mini }) => (mini ? "16px" : "40px")};
+  font-weight: ${({ mini }) => (mini ? "300" : "400")};
   color: #1d1f22;
 `;
 const Card = styled.div`
@@ -30,7 +31,7 @@ const Card = styled.div`
   }
 `;
 const CardImg = styled.img`
-  width: 98%;
+  width: ${({ cart }) => (cart ? "20px" : "98%")};
   height: 80%;
 `;
 const AddCard = styled.button`
@@ -45,5 +46,6 @@ const AddCard = styled.button`
   justify-content: center;
   background-color: rgba(94, 206, 123, 1);
   position: absolute;
+  display: none;
 `;
 export { Container, Card, CardImg, Header, AddCard };

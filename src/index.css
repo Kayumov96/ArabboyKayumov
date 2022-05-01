@@ -73,3 +73,12 @@ body {
     background-position: 0% 47%;
   }
 }
+.mini {
+  display: none;
+}
+.card:hover .mini {
+  display: block;
+}
+/* .card:hover + .cart {
+  display: block;
+} */
