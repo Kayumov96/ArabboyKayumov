@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Vectorcopy from "../../assets/icons/Vectorcopy.svg";
-import { kids } from "../../utils/products";
+import { data } from "../../utils/products";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 
 class Kids extends Component {
@@ -15,7 +15,7 @@ class Kids extends Component {
       <Container>
         <Header>Category name</Header>
         {/* <h1>Category name</h1> */}
-        {kids.map((value) => (
+        {data.map((value) => (
           <Card key={value.id} className="card">
             <CardImg src={value.src} />
             <AddCard className="mini">

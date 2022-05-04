@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import WrapperContext from "./context";
 import "./index.css";
 import Root from "./root";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Root />
-    </BrowserRouter>
+    <WrapperContext>
+      <BrowserRouter>
+        <Root />
+      </BrowserRouter>
+    </WrapperContext>
   </React.StrictMode>
 );
 

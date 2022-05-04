@@ -34,6 +34,7 @@ const Card = styled.div`
 // };
 const CardImg = styled.img`
   width: ${({ cart }) => (cart ? "20px" : "98%")};
+  /* opacity: ${({ opacity }) => (opacity ? "0.5" : "")}; */
   height: 80%;
 `;
 const AddCard = styled.button`

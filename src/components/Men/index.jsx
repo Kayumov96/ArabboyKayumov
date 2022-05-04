@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { men } from "../../utils/products";
+import { data } from "../../utils/products";
 import Vectorcopy from "../../assets/icons/Vectorcopy.svg";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 
@@ -9,7 +9,7 @@ class Men extends Component {
       <Container>
         <Header>Category name</Header>
         {/* <h1>Category name</h1> */}
-        {men.map((value) => (
+        {data.map((value) => (
           <Card key={value.id} className="card">
             <CardImg src={value.src} />
             <AddCard className="mini">
