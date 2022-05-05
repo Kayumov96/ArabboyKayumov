@@ -14,17 +14,19 @@ class Kids extends Component {
     return (
       <Container>
         <Header>Category name</Header>
-        {/* <h1>Category name</h1> */}
-        {data.map((value) => (
-          <Card key={value.id} className="card">
-            <CardImg src={value.src} />
-            <AddCard className="mini">
-              <CardImg cart src={Vectorcopy} alt="hey" />
-            </AddCard>
-            <Header mini>{value.title}</Header>
-            <h4>{value.price}</h4>
-          </Card>
-        ))}
+
+        {data.map((value) =>
+          value?.kid?.map((val) => (
+            <Card key={val.id} className="card">
+              <CardImg src={val.src} alt="image" />
+              <AddCard className="mini">
+                <CardImg cart src={Vectorcopy} alt="hey" />
+              </AddCard>
+              <Header mini>{val.title}</Header>
+              <h4>{val.price}</h4>
+            </Card>
+          ))
+        )}
       </Container>
 
       //   <div>
