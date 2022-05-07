@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { data } from "../../utils/products";
+import { data } from "../../mock/mock";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
-import Vectorcopy from "../../assets/icons/Vectorcopy.svg";
+import cart from "../../assets/icons/cart.svg";
 
 class Women extends Component {
   render() {
@@ -13,7 +13,7 @@ class Women extends Component {
             <Card key={val.id} className="card">
               <CardImg src={val.src} alt="image" />
               <AddCard className="mini">
-                <CardImg cart src={Vectorcopy} alt="hey" />
+                <CardImg cart src={cart} alt="add to cart" />
               </AddCard>
               <Header mini>{val.title}</Header>
               <h4>{val.price}</h4>

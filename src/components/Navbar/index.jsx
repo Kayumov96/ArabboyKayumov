@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
-import { Container, Icon, Logo, NavDiv, Select } from "./style";
-import Group from "../../assets/img/Group.png";
+import { active, Container, Icon, Logo, NavDiv, Select } from "./style";
+import logo from "../../assets/img/logo.png";
 
 class Navbar extends Component {
   render() {
@@ -14,17 +14,13 @@ class Navbar extends Component {
               key={value.id}
               to={value.path}
               className="navlink"
-              style={({ isActive }) => ({
-                color: isActive ? "#5ECE7B" : "#000000",
-                borderBottom: isActive ? "2px solid #5ECE7B" : "none",
-                fontWeight: isActive ? "600" : "400",
-              })}
+              style={({ isActive }) => (isActive ? active : {})}
             >
               <NavDiv>{value.title}</NavDiv>
             </NavLink>
           ))}
           <NavDiv style={{ width: "65%" }}>
-            <Logo src={Group} alt="Logo" />
+            <Logo src={logo} alt="Logo" />
           </NavDiv>
           <NavDiv>
             <Select>

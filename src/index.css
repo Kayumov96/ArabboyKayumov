@@ -3,26 +3,19 @@ body {
   margin: 0;
   padding: 0 100px;
   box-sizing: border-box;
-  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 * {
   padding: 0;
   margin: 0;
+  font-family: Raleway;
 }
 .navlink {
   text-decoration: none;
 }
-.not {
-  background-image: url("./assets/img/Notfound.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .back {
-  background: linear-gradient(91deg, #1c8268, #b1ded2, #8d9e99, #117078);
+  background-image: url("./assets/img/Notfound.jpg");
+}
+/* background: linear-gradient(91deg, #1c8268, #b1ded2, #8d9e99, #117078);
   background-size: 800% 800%;
   -webkit-animation: AnimationName 16s ease infinite;
   -moz-animation: AnimationName 16s ease infinite;
@@ -72,13 +65,10 @@ body {
   100% {
     background-position: 0% 47%;
   }
-}
+} */
 .mini {
   display: none;
 }
 .card:hover .mini {
   display: block;
 }
-/* .card:hover + .cart {
-  display: block;
-} */

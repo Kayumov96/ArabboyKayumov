@@ -1,5 +1,5 @@
 import React, { Component, createContext } from "react";
-import { data } from "../utils/products";
+import { data } from "../mock/mock";
 
 export const MainContext = createContext();
 

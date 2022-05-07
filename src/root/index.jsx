@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../components/Navbar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { navbar } from "../utils/navbar";
 import Error from "../components/NotFound";
 
@@ -10,13 +10,10 @@ class Root extends Component {
       <div>
         <Routes>
           <Route element={<Navbar />}>
-            {navbar.map((parent) => (
-              <Route
-                key={parent.id}
-                path={parent.path}
-                element={parent.element}
-              />
+            {navbar.map((value) => (
+              <Route key={value.id} path={value.path} element={value.element} />
             ))}
+            <Route path="/" element={<Navigate to={"/men"} />} />
           </Route>
           <Route exact path="*" element={<Error />} />
         </Routes>

@@ -31,4 +31,9 @@ const Select = styled.select`
   border: none;
   margin-right: 8px;
 `;
-export { Container, NavDiv, Logo, Icon, Select };
+const active = {
+  color: "#5ECE7B",
+  borderBottom: "2px solid #5ECE7B",
+  fontWeight: "600",
+};
+export { Container, NavDiv, Logo, Icon, Select, active };
