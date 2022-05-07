@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
-import { active, Container, Icon, Logo, NavDiv, Select } from "./style";
+import { active, Container, Logo, Select } from "./style";
 import logo from "../../assets/img/logo.png";
 
 class Navbar extends Component {
   render() {
     return (
-      <div>
+      <>
         <Container>
           {navbar.map((value) => (
             <NavLink
@@ -16,23 +16,23 @@ class Navbar extends Component {
               className="navlink"
               style={({ isActive }) => (isActive ? active : {})}
             >
-              <NavDiv>{value.title}</NavDiv>
+              <Container.Title>{value.title}</Container.Title>
             </NavLink>
           ))}
-          <NavDiv style={{ width: "65%" }}>
+          <Container.Title style={{ width: "65%" }}>
             <Logo src={logo} alt="Logo" />
-          </NavDiv>
-          <NavDiv>
+          </Container.Title>
+          <Container.Title>
             <Select>
               <option value="USD">$</option>
               <option value="EUR">€</option>
               <option value="JPY">¥</option>
             </Select>
-            <Icon />
-          </NavDiv>
+            <Logo.Icon />
+          </Container.Title>
         </Container>
         <Outlet />
-      </div>
+      </>
     );
   }
 }

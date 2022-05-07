@@ -6,12 +6,11 @@ export const Notfound = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <Container className="back">
-        <h1>OOOPS! Something went wrong (</h1>
-        <BackHome onClick={() => navigate(-1)}>Go back</BackHome>
-      </Container>
-    </>
+    <Container className="back">
+      <BackHome onClick={() => navigate(-1)}>
+        <h1>&#8634;</h1>
+      </BackHome>
+    </Container>
   );
 };
 export default Notfound;

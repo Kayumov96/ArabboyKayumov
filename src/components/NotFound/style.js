@@ -2,25 +2,26 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  margin: 19vh 0;
-  height: 60vh;
+  height: 700px;
+  margin: 0px auto;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: end;
 `;
 const BackHome = styled.button`
   width: 150px;
   height: 50px;
   display: flex;
+  font-size: larger;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   overflow: hidden;
   border-radius: 6px;
   border: none;
   color: #5ece7b;
-  background-color: #4f4180;
+  background-color: #000000;
 `;
 
 export { Container, BackHome };

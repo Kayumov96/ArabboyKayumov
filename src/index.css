@@ -14,6 +14,9 @@ body {
 }
 .back {
   background-image: url("./assets/img/Notfound.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 /* background: linear-gradient(91deg, #1c8268, #b1ded2, #8d9e99, #117078);
   background-size: 800% 800%;

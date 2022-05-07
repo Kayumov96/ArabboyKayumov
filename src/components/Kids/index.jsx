@@ -4,12 +4,12 @@ import { data } from "../../mock/mock";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 
 class Kids extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hover: false,
-    };
-  }
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = {
+  //       hover: false,
+  //     };
+  //   }
   render() {
     return (
       <Container>
@@ -28,10 +28,6 @@ class Kids extends Component {
           ))
         )}
       </Container>
-
-      //   <div>
-      //     <h1>Category name</h1>
-      //   </div>
     );
   }
 }

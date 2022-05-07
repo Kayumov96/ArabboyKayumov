@@ -7,17 +7,15 @@ import Error from "../components/NotFound";
 class Root extends Component {
   render() {
     return (
-      <div>
-        <Routes>
-          <Route element={<Navbar />}>
-            {navbar.map((value) => (
-              <Route key={value.id} path={value.path} element={value.element} />
-            ))}
-            <Route path="/" element={<Navigate to={"/men"} />} />
-          </Route>
-          <Route exact path="*" element={<Error />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route element={<Navbar />}>
+          {navbar.map((value) => (
+            <Route key={value.id} path={value.path} element={value.element} />
+          ))}
+          <Route path="/" element={<Navigate to={"/men"} />} />
+        </Route>
+        <Route exact path="*" element={<Error />} />
+      </Routes>
     );
   }
 }

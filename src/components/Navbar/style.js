@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Vector } from "../../assets/icons/Vector.svg";
+import { ReactComponent as cart1 } from "../../assets/icons/cart1.svg";
 
 const Container = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 80px;
   justify-content: space-between;
 `;
-const NavDiv = styled.div`
+Container.Title = styled.div`
   width: 100px;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ const Logo = styled.img`
   width: 31px;
   height: 28px;
 `;
-const Icon = styled(Vector)`
+Logo.Icon = styled(cart1)`
   width: 20px;
   height: 18px;
 `;
@@ -36,4 +36,4 @@ const active = {
   borderBottom: "2px solid #5ECE7B",
   fontWeight: "600",
 };
-export { Container, NavDiv, Logo, Icon, Select, active };
+export { Container, Logo, Select, active };
