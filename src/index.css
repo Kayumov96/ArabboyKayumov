@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@500&display=swap");
 body {
-  margin: 0;
-  padding: 0 100px;
+  margin: 0 auto;
+  width: 80%;
+  padding: 0 50px;
   box-sizing: border-box;
+  /* max-width: 1440px; */
 }
 * {
   padding: 0;
@@ -18,57 +20,6 @@ body {
   background-position: center;
   background-size: cover;
 }
-/* background: linear-gradient(91deg, #1c8268, #b1ded2, #8d9e99, #117078);
-  background-size: 800% 800%;
-  -webkit-animation: AnimationName 16s ease infinite;
-  -moz-animation: AnimationName 16s ease infinite;
-  -o-animation: AnimationName 16s ease infinite;
-  animation: AnimationName 16s ease infinite;
-}
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 47%;
-  }
-  50% {
-    background-position: 100% 54%;
-  }
-  100% {
-    background-position: 0% 47%;
-  }
-}
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 0% 47%;
-  }
-  50% {
-    background-position: 100% 54%;
-  }
-  100% {
-    background-position: 0% 47%;
-  }
-}
-@-o-keyframes AnimationName {
-  0% {
-    background-position: 0% 47%;
-  }
-  50% {
-    background-position: 100% 54%;
-  }
-  100% {
-    background-position: 0% 47%;
-  }
-}
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 47%;
-  }
-  50% {
-    background-position: 100% 54%;
-  }
-  100% {
-    background-position: 0% 47%;
-  }
-} */
 .mini {
   display: none;
 }

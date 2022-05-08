@@ -29,6 +29,8 @@ export const data = [
         size: ["s", "m", "l", "xl"],
         color: ["grey", "black", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 2,
@@ -36,7 +38,10 @@ export const data = [
         src: womensproduct2,
         price: "50.00",
         size: ["s", "m", "l"],
+        color: ["pink", "black", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 3,
@@ -44,23 +49,32 @@ export const data = [
         src: womensproduct3,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "black", "green", "red"],
         outOfStock: true,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 4,
         title: "Apollo Running Short",
         src: womensproduct4,
         price: "50.00",
-        size: ["s", "m", "l", "xl"],
+        size: ["s", "m", "l"],
+        color: ["grey", "black", "green", "yellow"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 5,
         title: "Apollo Running Short",
         src: womensproduct1,
         price: "50.00",
-        size: ["s", "m", "l", "xl"],
+        size: ["m", "l", "xl"],
+        color: ["grey", "black", "yellow"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 6,
@@ -68,7 +82,10 @@ export const data = [
         src: womensproduct3,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "pink", "yellow", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
     ],
   },
@@ -80,8 +97,11 @@ export const data = [
         title: "Apollo Running Short",
         src: mensproduct1,
         price: "50.00",
-        size: ["s", "m", "l", "xl"],
+        size: ["s", "m", "l"],
+        color: ["grey", "pink", "yellow", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 8,
@@ -89,7 +109,10 @@ export const data = [
         src: mensproduct2,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "yellow", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 9,
@@ -97,7 +120,10 @@ export const data = [
         src: mensproduct3,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "pink", "yellow"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 10,
@@ -105,7 +131,10 @@ export const data = [
         src: mensproduct4,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "yellow", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 11,
@@ -113,7 +142,10 @@ export const data = [
         src: mensproduct5,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "black", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 12,
@@ -121,7 +153,10 @@ export const data = [
         src: mensproduct6,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "black", "white"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
     ],
   },
@@ -134,7 +169,10 @@ export const data = [
         src: kidsproduct1,
         price: "50.00",
         size: ["s", "m", "l"],
+        color: ["grey", "pink", "yellow", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 14,
@@ -142,7 +180,10 @@ export const data = [
         src: kidsproduct2,
         price: "50.00",
         size: ["s", "m", "l"],
+        color: ["grey", "pink", "yellow", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 15,
@@ -150,7 +191,10 @@ export const data = [
         src: kidsproduct3,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "pink", "black", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 16,
@@ -158,7 +202,10 @@ export const data = [
         src: kidsproduct4,
         price: "50.00",
         size: ["m", "l", "xl"],
+        color: ["grey", "black", "white", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 17,
@@ -166,7 +213,10 @@ export const data = [
         src: kidsproduct5,
         price: "50.00",
         size: ["m", "l", "xl"],
+        color: ["grey", "pink", "yellow", "green"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
       {
         id: 18,
@@ -174,7 +224,10 @@ export const data = [
         src: kidsproduct6,
         price: "50.00",
         size: ["s", "m", "l", "xl"],
+        color: ["grey", "black", "yellow", "red"],
         outOfStock: false,
+        description:
+          "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       },
     ],
   },

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { data } from "../../mock/mock";
 import cart from "../../assets/icons/cart.svg";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
+import DetailPage from "../DetailProductPage";
 
 class Men extends Component {
   render() {
@@ -20,6 +21,7 @@ class Men extends Component {
             </Card>
           ))
         )}
+        <DetailPage />
       </Container>
     );
   }
