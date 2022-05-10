@@ -5,6 +5,21 @@ import { active, Container, Logo, Select } from "./style";
 import logo from "../../assets/img/logo.png";
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      EUR: 1.17,
+      USD: 1,
+      JPY: 0.077,
+      cart: false,
+    };
+    this.showMyCart = this.showMyCart.bind(this);
+  }
+  showMyCart() {
+    this.setState((state) => ({
+      cart: !state.cart,
+    }));
+  }
   render() {
     return (
       <>
@@ -28,7 +43,22 @@ class Navbar extends Component {
               <option value="EUR">€</option>
               <option value="JPY">¥</option>
             </Select>
-            <Logo.Icon />
+            <Logo.Icon onClick={() => this.showMyCart()} />
+            {this.state.cart && (
+              <Container.Cart>
+                <h4>My Bag:</h4>
+                <h5>Total:</h5>
+                <h5>Total:</h5>
+                <h5>Total:</h5>
+                <h5>Total:</h5>
+                <h5>Total:</h5>
+
+                <Select.BtnDiv>
+                  <Select.Button>View bag</Select.Button>
+                  <Select.Button green>Check out</Select.Button>
+                </Select.BtnDiv>
+              </Container.Cart>
+            )}
           </Container.Title>
         </Container>
         <Outlet />

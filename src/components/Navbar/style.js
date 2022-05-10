@@ -18,6 +18,17 @@ Container.Title = styled.div`
   font-size: 16px;
   line-height: 19px;
 `;
+Container.Cart = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px;
+  position: absolute;
+  width: 325px;
+  height: auto;
+  right: 72px;
+  top: 78px;
+  background: rgba(57, 55, 72, 0.22); ;
+`;
 const Logo = styled.img`
   width: 31px;
   height: 28px;
@@ -30,6 +41,32 @@ const Select = styled.select`
   outline: none;
   border: none;
   margin-right: 8px;
+`;
+Select.Button = styled.button`
+  box-sizing: ${({ green }) => (green ? "none" : "border-box")};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  position: static;
+  width: 140px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  background: ${({ green }) => (green ? "#5ece7b" : "#ffffff")};
+  border: ${({ green }) => (green ? "none" : "1px solid #1d1f22")};
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+`;
+Select.BtnDiv = styled.div`
+  display: flex;
+  height: 45px;
+  width: inherit;
+  justify-content: space-around;
+  align-items: center;
 `;
 const active = {
   color: "#5ECE7B",
