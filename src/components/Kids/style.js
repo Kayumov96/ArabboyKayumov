@@ -6,14 +6,10 @@ const Container = styled.div`
   display: flex;
   gap: auto;
   padding: 20px;
+  margin-top: 10%;
   flex-wrap: wrap;
   overflow: scroll;
 `;
-// const getSize=({ type})=>{
-//    switch(type){
-//        case
-//    }
-// }
 const Header = styled.div`
   width: 100%;
   margin: 10px 0;
@@ -34,6 +30,7 @@ const AddCard = styled.button`
   justify-content: center;
   background-color: rgba(94, 206, 123, 1);
   position: absolute;
+  cursor: pointer;
   display: none;
 `;
 const Card = styled.div`
@@ -47,6 +44,7 @@ const Card = styled.div`
   height: 35%;
   max-width: 386px;
   max-height: 444px;
+  cursor: pointer;
   :hover {
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
   }

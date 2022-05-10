@@ -11,11 +11,11 @@ class Kids extends Component {
     };
   }
   render() {
-    const AddCardHandler = (value) => {
-      this.setState((selected) => {
-        return;
-      });
-    };
+    // const AddCardHandler = (value) => {
+    //   this.setState((selected) => {
+    //     return;
+    //   });
+    // };
     return (
       <Container>
         <Header>Category name</Header>

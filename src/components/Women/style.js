@@ -6,6 +6,7 @@ const Container = styled.div`
   display: flex;
   gap: auto;
   padding: 20px;
+  margin-top: 10%;
   flex-wrap: wrap;
   overflow: scroll;
 `;
@@ -21,6 +22,7 @@ const Card = styled.div`
   margin: auto;
   position: relative;
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   padding: 10px;
   width: 27%;
@@ -44,6 +46,7 @@ const AddCard = styled.button`
   right: 8%;
   border-radius: 50%;
   border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

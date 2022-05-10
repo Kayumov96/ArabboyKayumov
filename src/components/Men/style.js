@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  margin-top: 10%;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -26,6 +27,7 @@ const Card = styled.div`
   padding-bottom: 15px;
   width: 27%;
   height: 35%;
+  cursor: pointer;
   :hover {
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
   }
@@ -46,6 +48,7 @@ const AddCard = styled.button`
   justify-content: center;
   background-color: rgba(94, 206, 123, 1);
   position: absolute;
+  cursor: pointer;
   display: none;
 `;
 export { Container, Card, CardImg, Header, AddCard };

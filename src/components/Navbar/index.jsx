@@ -12,6 +12,7 @@ class Navbar extends Component {
       USD: 1,
       JPY: 0.077,
       cart: false,
+      cartItems: [],
     };
     this.showMyCart = this.showMyCart.bind(this);
   }
@@ -43,21 +44,23 @@ class Navbar extends Component {
               <option value="EUR">€</option>
               <option value="JPY">¥</option>
             </Select>
-            <Logo.Icon onClick={() => this.showMyCart()} />
+            <Logo.Icon
+              onClick={() => this.showMyCart(console.log(this.showMyCart))}
+            />
             {this.state.cart && (
-              <Container.Cart>
-                <h4>My Bag:</h4>
-                <h5>Total:</h5>
-                <h5>Total:</h5>
-                <h5>Total:</h5>
-                <h5>Total:</h5>
-                <h5>Total:</h5>
-
-                <Select.BtnDiv>
-                  <Select.Button>View bag</Select.Button>
-                  <Select.Button green>Check out</Select.Button>
-                </Select.BtnDiv>
-              </Container.Cart>
+              <Container.CartWrapper>
+                <Container.Cart>
+                  <h4>My Bag:{this.state.cartItems}</h4>
+                  <h5>Total:</h5>
+                  <h5>Total:</h5>
+                  <h5>Total:</h5>
+                  <h5>Total:</h5>
+                  <Select.BtnDiv>
+                    <Select.Button>View bag</Select.Button>
+                    <Select.Button green>Check out</Select.Button>
+                  </Select.BtnDiv>
+                </Container.Cart>
+              </Container.CartWrapper>
             )}
           </Container.Title>
         </Container>
