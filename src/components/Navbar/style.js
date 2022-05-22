@@ -34,6 +34,14 @@ Container.CartWrapper = styled.div`
   z-index: 1;
   background: rgba(57, 55, 72, 0.22);
 `;
+Container.CartText = styled.div`
+  width: 100%;
+  height: 25px;
+  font-weight: 700;
+  display: flex;
+  gap: 5px;
+  font-size: 16px;
+`;
 Container.Cart = styled.div`
   display: flex;
   flex-direction: column;

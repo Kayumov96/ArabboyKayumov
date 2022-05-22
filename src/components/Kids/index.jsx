@@ -1,33 +1,34 @@
 import React, { Component } from "react";
 import cart from "../../assets/icons/cart.svg";
-import { data } from "../../mock/mock";
+import { MainContext } from "../../context";
+
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 
 class Kids extends Component {
+  static contextType = MainContext;
   constructor(props) {
     super(props);
     this.state = {
-      selected: {},
+      selected: [],
     };
   }
+  AddCard(id) {
+    this.setState();
+  }
   render() {
-    // const AddCardHandler = (value) => {
-    //   this.setState((selected) => {
-    //     return;
-    //   });
-    // };
+    const context = this.context;
     return (
       <Container>
         <Header>Category name</Header>
-        {data.map((value) =>
+        {context?.map((value) =>
           value?.kid?.map((val) => (
-            <Card key={val.id} className="card">
-              <CardImg src={val.src} alt="image" />
-              <AddCard className="mini" onClick={() => console.log(val.price)}>
+            <Card key={val?.id} className="card">
+              <CardImg src={val?.src} alt="image" />
+              <AddCard className="mini">
                 <CardImg cart src={cart} alt="add to cart" />
               </AddCard>
-              <Header mini>{val.title}</Header>
-              <h4>{val.price}</h4>
+              <Header mini>{val?.title}</Header>
+              <h4>{val?.price}</h4>
             </Card>
           ))
         )}

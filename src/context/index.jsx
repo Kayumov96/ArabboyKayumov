@@ -6,11 +6,8 @@ export const MainContext = createContext();
 class WrapperContext extends Component {
   render() {
     const { children } = this.props;
-    return (
-      <div>
-        <MainContext.Provider value={data}>{children}</MainContext.Provider>
-      </div>
-    );
+    // console.log(children, "child");
+    return <MainContext.Provider value={data}>{children}</MainContext.Provider>;
   }
 }
 export default WrapperContext;

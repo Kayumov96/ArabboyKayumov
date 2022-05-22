@@ -8,17 +8,18 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      EUR: 1.17,
-      USD: 1,
-      JPY: 0.077,
-      cart: false,
-      cartItems: [],
+      EUR: "",
+      USD: "",
+      JPY: "",
+      showCart: false,
+      cart: [],
+      totalPrice: 0,
     };
     this.showMyCart = this.showMyCart.bind(this);
   }
   showMyCart() {
     this.setState((state) => ({
-      cart: !state.cart,
+      showCart: !state.showCart,
     }));
   }
   render() {
@@ -45,16 +46,18 @@ class Navbar extends Component {
               <option value="JPY">¥</option>
             </Select>
             <Logo.Icon
-              onClick={() => this.showMyCart(console.log(this.showMyCart))}
+              onClick={() => this.showMyCart()}
+              cartitems={this.state.cart}
             />
-            {this.state.cart && (
+            {this.state.showCart && (
               <Container.CartWrapper>
                 <Container.Cart>
-                  <h4>My Bag:{this.state.cartItems}</h4>
-                  <h5>Total:</h5>
-                  <h5>Total:</h5>
-                  <h5>Total:</h5>
-                  <h5>Total:</h5>
+                  <Container.CartText>
+                    My Bag:
+                    <h5>{this.state.cart.length} items</h5>
+                  </Container.CartText>
+
+                  <h5>Total:{this.state.totalPrice}</h5>
                   <Select.BtnDiv>
                     <Select.Button>View bag</Select.Button>
                     <Select.Button green>Check out</Select.Button>
