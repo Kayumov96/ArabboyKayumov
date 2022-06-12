@@ -5,22 +5,23 @@ import { MainContext } from "../../context";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 
 class Kids extends Component {
-  static contextType = MainContext;
+  // static contextType = MainContext;
   constructor(props) {
     super(props);
     this.state = {
       selected: [],
+      data: this.props.data,
     };
   }
   AddCard(id) {
     this.setState();
   }
   render() {
-    const context = this.context;
+    // const context = this.context;
     return (
       <Container>
         <Header>Category name</Header>
-        {context?.map((value) =>
+        {this.state?.data.map((value) =>
           value?.kid?.map((val) => (
             <Card key={val?.id} className="card">
               <CardImg src={val?.src} alt="image" />

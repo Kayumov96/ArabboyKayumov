@@ -12,8 +12,8 @@ class Navbar extends Component {
       USD: "",
       JPY: "",
       showCart: false,
-      cart: [],
       totalPrice: 0,
+      cart: [],
     };
     this.showMyCart = this.showMyCart.bind(this);
   }
@@ -23,6 +23,7 @@ class Navbar extends Component {
     }));
   }
   render() {
+    console.log(this.props, "navbarda");
     return (
       <>
         <Container>

@@ -1,11 +1,19 @@
 import React, { Component, useContext } from "react";
-import { data } from "../../mock/mock";
 import { MainContext } from "../../context";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 import cart from "../../assets/icons/cart.svg";
+import { data } from "../../mock/mock";
+import Navbar from "../Navbar";
 
 class Women extends Component {
   static contextType = MainContext;
+  constructor(props) {
+    super(props);
+    this.state = {
+      card: [],
+      data: this.props.data,
+    };
+  }
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -15,24 +23,28 @@ class Women extends Component {
   //   };
   //   console.log(this.state.data, "data");
   // }
-
   render() {
-    const context = this.context;
-    // console.log(context, "this");
+    // const handleAdd = (ids) => {
+    //   if (ids !== id) {
+    //     this.setState(cart.push(ids));
+    //   }
+    // };
+    // const context = this.context;
     return (
       <Container>
         <Header>Category name</Header>
-        {context?.map((value) =>
-          value?.woman?.map((item) => (
-            <Card key={item?.id} className="card">
-              <CardImg src={item?.src} alt="image" />
-              <AddCard className="mini">
-                <CardImg cart src={cart} alt="add to cart" />
-              </AddCard>
-              <Header mini>{item?.title}</Header>
-              <h4>{item?.price}</h4>
-            </Card>
-          ))
+        {data.map(
+          (value) =>
+            value?.category === "women" && (
+              <Card key={value.id} className="card">
+                <CardImg src={value?.src} alt="image" />
+                <AddCard className="mini">
+                  <CardImg cart src={cart} alt="add to cart" />
+                </AddCard>
+                <Header mini>{value?.title}</Header>
+                <h4>{value?.price}</h4>
+              </Card>
+            )
         )}
       </Container>
     );

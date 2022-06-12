@@ -25,12 +25,19 @@ const Card = styled.div`
   flex-direction: column;
   padding: 10px;
   padding-bottom: 15px;
-  width: 27%;
-  height: 35%;
+  width: 250px;
+  max-width: var(--width);
+  height: ;
   cursor: pointer;
   :hover {
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
   }
+`;
+Card.Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: auto;
+  width: 100%;
 `;
 const CardImg = styled.img`
   width: ${({ cart }) => (cart ? "20px" : "98%")};

@@ -13,14 +13,6 @@ class Men extends Component {
     };
     // this.cartitems = this.cartItems.bind(this);
   }
-  // handleSelect(ids) {
-  //   data.filter((value) => {
-  //     if (value.id !== ids) {
-  //       console.log(this.state.cardItems);
-  //       // this.state.cardItems.push(value);
-  //     }
-  //   });
-  // }
 
   showPdp() {
     this.setState((state) => ({
@@ -32,23 +24,20 @@ class Men extends Component {
     return (
       <Container>
         <Header>Category name</Header>
-        {context?.map((value) =>
-          value?.man?.map((val) => (
-            <Card key={val?.id} className="card">
-              <CardImg src={val?.src} alt="image" />
-              <AddCard className="mini">
-                <CardImg
-                  cart
-                  src={cart}
-                  alt="add to cart"
-                  onClick={() => this.handleSelect()}
-                />
-              </AddCard>
-              <Header mini>{val?.title}</Header>
-              <h4>{val?.price}</h4>
-            </Card>
-          ))
-        )}
+        <Card.Wrapper>
+          {context?.map((value) =>
+            value?.man?.map((val) => (
+              <Card key={val?.id} className="card">
+                <CardImg src={val?.src} alt="image" />
+                <AddCard className="mini">
+                  <CardImg cart src={cart} alt="add to cart" />
+                </AddCard>
+                <Header mini>{val?.title}</Header>
+                <h4>{val?.price}</h4>
+              </Card>
+            ))
+          )}
+        </Card.Wrapper>
       </Container>
     );
   }

@@ -3,14 +3,21 @@ import Navbar from "../components/Navbar";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { navbar } from "../utils/navbar";
 import Error from "../components/NotFound";
-import { MainContext } from "../context";
+// import { MainContext } from "../context";
+import { data } from "../mock/mock";
 
 class Root extends Component {
-  static contextType = MainContext;
+  // static contextType = MainContext;
+  constructor(props) {
+    super(props);
+    this.state = {
+      cart: [],
+      data: data,
+    };
+  }
   render() {
     // const context = this.context;
-    // console.log(context, "bu");
-
+    console.log(this.state.data, "rootda");
     return (
       <Routes>
         <Route element={<Navbar />}>
@@ -19,8 +26,7 @@ class Root extends Component {
               key={value.id}
               path={value.path}
               element={value.element}
-              data={this.context}
-              cart={this.props.CardItem}
+              data={this.state.data}
             />
           ))}
           <Route path="/" element={<Navigate to={"/men"} />} />
