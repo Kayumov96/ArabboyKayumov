@@ -23,20 +23,33 @@ class Navbar extends Component {
     }));
   }
   render() {
-    console.log(this.props, "navbarda");
     return (
       <>
         <Container>
-          {navbar.map((value) => (
-            <NavLink
-              key={value.id}
-              to={value.path}
+          {navbar.map(({ path, id, title, hidden }) => {
+            return (
+              !hidden && (
+                <NavLink
+                  key={id}
+                  to={path}
+                  className="navlink"
+                  style={({ isActive }) => (isActive ? active : {})}
+                >
+                  <Container.Title>{title}</Container.Title>
+                </NavLink>
+              )
+            );
+          })}
+          {/* {navbar.map(({path, hidden , id, title }) => {
+          return <NavLink
+              key={id}
+              to={path}
               className="navlink"
               style={({ isActive }) => (isActive ? active : {})}
             >
-              <Container.Title>{value.title}</Container.Title>
+              <Container.Title>{title}</Container.Title>
             </NavLink>
-          ))}
+  }))} */}
           <Container.Title style={{ width: "65%" }}>
             <Logo src={logo} alt="Logo" />
           </Container.Title>

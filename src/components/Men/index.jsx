@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { MainContext } from "../../context";
 import cart from "../../assets/icons/cart.svg";
 import DetailPage from "../DetailProductPage";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
+import { data } from "../../mock/mock";
 
 class Men extends Component {
-  static contextType = MainContext;
+  // static contextType = MainContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -20,25 +20,41 @@ class Men extends Component {
     }));
   }
   render() {
-    const context = this.context;
+    // const context = this.context;
     return (
       <Container>
         <Header>Category name</Header>
-        <Card.Wrapper>
-          {context?.map((value) =>
-            value?.man?.map((val) => (
-              <Card key={val?.id} className="card">
-                <CardImg src={val?.src} alt="image" />
+        {data.map(
+          (value) =>
+            value?.category === "men" && (
+              <Card key={value.id} className="card">
+                <CardImg src={value?.src} alt="image" />
                 <AddCard className="mini">
                   <CardImg cart src={cart} alt="add to cart" />
                 </AddCard>
-                <Header mini>{val?.title}</Header>
-                <h4>{val?.price}</h4>
+                <Header mini>{value?.title}</Header>
+                <h4>{value?.price}</h4>
               </Card>
-            ))
-          )}
-        </Card.Wrapper>
+            )
+        )}
       </Container>
+      // <Container>
+      //   <Header>Category name</Header>
+      //   <Card.Wrapper>
+      //     {this.state?.data?.map(({category}) =>
+      //       category?.man?.map((val) => (
+      //         <Card key={val?.id} className="card">
+      //           <CardImg src={val?.src} alt="image" />
+      //           <AddCard className="mini">
+      //             <CardImg cart src={cart} alt="add to cart" />
+      //           </AddCard>
+      //           <Header mini>{val?.title}</Header>
+      //           <h4>{val?.price}</h4>
+      //         </Card>
+      //       ))
+      //     )}
+      //   </Card.Wrapper>
+      // </Container>
     );
   }
 }

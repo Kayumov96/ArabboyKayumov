@@ -3,31 +3,25 @@ import Navbar from "../components/Navbar";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { navbar } from "../utils/navbar";
 import Error from "../components/NotFound";
-// import { MainContext } from "../context";
-import { data } from "../mock/mock";
 
 class Root extends Component {
-  // static contextType = MainContext;
   constructor(props) {
     super(props);
     this.state = {
       cart: [],
-      data: data,
     };
   }
   render() {
-    // const context = this.context;
-    console.log(this.state.data, "rootda");
     return (
       <Routes>
+        <Route>
+          {navbar.map(({ path, id, element, hidden }) => {
+            return hidden && <Route key={id} path={path} element={element} />;
+          })}
+        </Route>
         <Route element={<Navbar />}>
           {navbar.map((value) => (
-            <Route
-              key={value.id}
-              path={value.path}
-              element={value.element}
-              data={this.state.data}
-            />
+            <Route key={value.id} path={value.path} element={value.element} />
           ))}
           <Route path="/" element={<Navigate to={"/men"} />} />
         </Route>

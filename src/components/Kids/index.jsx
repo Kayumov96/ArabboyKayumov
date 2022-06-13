@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import cart from "../../assets/icons/cart.svg";
-import { MainContext } from "../../context";
+import { data } from "../../mock/mock";
 
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 
@@ -10,7 +10,6 @@ class Kids extends Component {
     super(props);
     this.state = {
       selected: [],
-      data: this.props.data,
     };
   }
   AddCard(id) {
@@ -21,17 +20,18 @@ class Kids extends Component {
     return (
       <Container>
         <Header>Category name</Header>
-        {this.state?.data.map((value) =>
-          value?.kid?.map((val) => (
-            <Card key={val?.id} className="card">
-              <CardImg src={val?.src} alt="image" />
-              <AddCard className="mini">
-                <CardImg cart src={cart} alt="add to cart" />
-              </AddCard>
-              <Header mini>{val?.title}</Header>
-              <h4>{val?.price}</h4>
-            </Card>
-          ))
+        {data.map(
+          (value) =>
+            value?.category === "kids" && (
+              <Card key={value.id} className="card">
+                <CardImg src={value?.src} alt="image" />
+                <AddCard className="mini">
+                  <CardImg cart src={cart} alt="add to cart" />
+                </AddCard>
+                <Header mini>{value?.title}</Header>
+                <h4>{value?.price}</h4>
+              </Card>
+            )
         )}
       </Container>
     );

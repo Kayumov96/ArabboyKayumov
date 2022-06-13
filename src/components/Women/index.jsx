@@ -1,42 +1,29 @@
-import React, { Component, useContext } from "react";
-import { MainContext } from "../../context";
+import React, { Component } from "react";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 import cart from "../../assets/icons/cart.svg";
 import { data } from "../../mock/mock";
 import Navbar from "../Navbar";
+import { useNavigate, useNavigationType } from "react-router-dom";
 
 class Women extends Component {
-  static contextType = MainContext;
   constructor(props) {
     super(props);
     this.state = {
       card: [],
-      data: this.props.data,
+      navigate: "",
     };
   }
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     card: this.props.cart,
-  //     data: this.context,
-  //     addedProduct: [],
-  //   };
-  //   console.log(this.state.data, "data");
-  // }
   render() {
-    // const handleAdd = (ids) => {
-    //   if (ids !== id) {
-    //     this.setState(cart.push(ids));
-    //   }
-    // };
-    // const context = this.context;
+    function onNavigate() {
+      <a href="/productdescription">g</a>;
+    }
     return (
       <Container>
         <Header>Category name</Header>
         {data.map(
           (value) =>
             value?.category === "women" && (
-              <Card key={value.id} className="card">
+              <Card key={value.id} className="card" onClick={onNavigate}>
                 <CardImg src={value?.src} alt="image" />
                 <AddCard className="mini">
                   <CardImg cart src={cart} alt="add to cart" />
