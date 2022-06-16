@@ -65,6 +65,18 @@ class Navbar extends Component {
                     My Bag:
                     <h5>{context?.cart?.length} items</h5>
                   </Container.CartText>
+                  {context?.cart.map((value, index) => {
+                    return (
+                      <div key={index}>
+                        <h5>{value?.title}</h5>;
+                        <img
+                          src={value.src}
+                          alt="product"
+                          style={{ width: "25px" }}
+                        />
+                      </div>
+                    );
+                  })}
 
                   <h5>Total:{this.state.totalPrice}</h5>
                   <Select.BtnDiv>

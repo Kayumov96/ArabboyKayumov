@@ -48,7 +48,8 @@ Container.Cart = styled.div`
   padding: 32px 16px;
   position: absolute;
   width: 325px;
-  height: auto;
+  max-height: 400px;
+  overflow: scroll;
   right: 72px;
   top: 0px;
   z-index: 1;
@@ -92,10 +93,14 @@ Select.Button = styled.button`
 `;
 Select.BtnDiv = styled.div`
   display: flex;
-  height: 45px;
+  height: 78px;
+  width: inherit;
+  background: #ffffff;
   width: inherit;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 47%;
 `;
 const active = {
   color: "#5ECE7B",

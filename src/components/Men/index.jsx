@@ -21,8 +21,9 @@ class Men extends Component {
   render() {
     const context = this.context;
     function onHandle(val) {
-      console.log(val, "hheehehehehehe");
-      context?.setCart(context.cart.push(val));
+      // console.log(val, "hheehehehehehe");
+      var tot = context.cart.push(val);
+      return tot;
     }
     return (
       <Container>
