@@ -2,6 +2,7 @@ import Men from "../components/Men";
 import Women from "../components/Women";
 import Kids from "../components/Kids";
 import DetailPage from "../components/DetailProductPage";
+import Cart from "../components/Cart";
 
 export const navbar = [
   {
@@ -34,6 +35,12 @@ export const navbar = [
     path: "/productdescription",
     element: <DetailPage />,
     hidden: true,
+    children: [],
+  },
+  {
+    id: 5,
+    path: "/cart",
+    element: <Cart />,
     children: [],
   },
 ];

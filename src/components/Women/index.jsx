@@ -3,9 +3,11 @@ import { AddCard, Card, CardImg, Container, Header } from "./style";
 import cart from "../../assets/icons/cart.svg";
 import { data } from "../../mock/mock";
 import Navbar from "../Navbar";
+import MainContext from "../Context";
 // import { NavLink, useNavigate, useNavigationType } from "react-router-dom";
 
 class Women extends Component {
+  static contextType = MainContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -14,8 +16,11 @@ class Women extends Component {
     };
   }
   render() {
-    function sentTo(value) {
-      return <Navbar value={value} />;
+    const context = this.context;
+    function onHandle(val) {
+      // console.log(val, "hheehehehehehe");
+      var tot = context.cart.push(val);
+      return tot;
     }
     return (
       <Container>
@@ -25,7 +30,7 @@ class Women extends Component {
             value?.category === "women" && (
               <Card key={value.id} className="card">
                 <CardImg src={value?.src} alt="image" />
-                <AddCard className="mini" onClick={() => sentTo(value)}>
+                <AddCard className="mini" onClick={() => onHandle(value)}>
                   <CardImg cart src={cart} alt="add to cart" />
                 </AddCard>
                 <Header mini>{value?.title}</Header>

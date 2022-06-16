@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
-import { active, Container, Logo, Select } from "./style";
+import {
+  active,
+  CartItems,
+  Colors,
+  Container,
+  Logo,
+  Select,
+  Sizes,
+} from "./style";
 import logo from "../../assets/img/logo.png";
 import MainContext from "../Context";
 
@@ -23,6 +31,32 @@ class Navbar extends Component {
     this.setState((state) => ({
       showCart: !state.showCart,
     }));
+  }
+  getColor(type) {
+    console.log(type, "rang");
+    switch (type) {
+      case "grey":
+        return <Colors grey />;
+        break;
+      case "pink":
+        return <Colors pink />;
+        break;
+      case "yellow":
+        return <Colors yellow />;
+        break;
+      case "green":
+        return <Colors green />;
+        break;
+      case "black":
+        return <Colors black />;
+        break;
+      case "red":
+        return <Colors red />;
+        break;
+      default:
+        <Colors white />;
+        break;
+    }
   }
   render() {
     const context = this.context;
@@ -67,21 +101,47 @@ class Navbar extends Component {
                   </Container.CartText>
                   {context?.cart.map((value, index) => {
                     return (
-                      <div key={index}>
-                        <h5>{value?.title}</h5>;
-                        <img
+                      <CartItems key={index}>
+                        <CartItems.Description>
+                          <span> {value?.title}</span>
+                          <h4>{value?.price}</h4>
+                          Size:
+                          <div style={{ display: "flex", gap: "4px" }}>
+                            {value?.size.map((val, index) => (
+                              <Sizes key={index}>{val}</Sizes>
+                            ))}
+                          </div>
+                          Color:
+                          <div style={{ display: "flex", gap: "6px" }}>
+                            {value?.color.map((v) => (
+                              <Sizes>{this.getColor(v)}</Sizes>
+                            ))}
+                          </div>
+                        </CartItems.Description>
+                        <Select.BtnDiv
+                          style={{
+                            width: "8%",
+                            height: "100%",
+                            flexDirection: "column",
+                            padding: "6px 3px",
+                          }}
+                        >
+                          <Sizes>+</Sizes>
+                          <Sizes>-</Sizes>
+                        </Select.BtnDiv>
+                        <CartItems.Img
                           src={value.src}
                           alt="product"
-                          style={{ width: "25px" }}
+                          // style={{ width: "25px" }}
                         />
-                      </div>
+                      </CartItems>
                     );
                   })}
 
                   <h5>Total:{this.state.totalPrice}</h5>
                   <Select.BtnDiv>
                     <Select.Button>
-                      <Link to={"/productdescription"} className="navlink">
+                      <Link to={"/cart"} className="navlink">
                         View bag
                       </Link>
                     </Select.Button>
