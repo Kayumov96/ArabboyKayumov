@@ -3,7 +3,7 @@ import { AddCard, Card, CardImg, Container, Header } from "./style";
 import cart from "../../assets/icons/cart.svg";
 import { data } from "../../mock/mock";
 import Navbar from "../Navbar";
-import { useNavigate, useNavigationType } from "react-router-dom";
+// import { NavLink, useNavigate, useNavigationType } from "react-router-dom";
 
 class Women extends Component {
   constructor(props) {
@@ -14,8 +14,8 @@ class Women extends Component {
     };
   }
   render() {
-    function onNavigate() {
-      <a href="/productdescription">g</a>;
+    function sentTo(value) {
+      return <Navbar value={value} />;
     }
     return (
       <Container>
@@ -23,9 +23,9 @@ class Women extends Component {
         {data.map(
           (value) =>
             value?.category === "women" && (
-              <Card key={value.id} className="card" onClick={onNavigate}>
+              <Card key={value.id} className="card">
                 <CardImg src={value?.src} alt="image" />
-                <AddCard className="mini">
+                <AddCard className="mini" onClick={() => sentTo(value)}>
                   <CardImg cart src={cart} alt="add to cart" />
                 </AddCard>
                 <Header mini>{value?.title}</Header>

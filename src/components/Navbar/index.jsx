@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
 import { active, Container, Logo, Select } from "./style";
 import logo from "../../assets/img/logo.png";
+import MainContext from "../Context";
 
 class Navbar extends Component {
+  static contextType = MainContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +15,7 @@ class Navbar extends Component {
       JPY: "",
       showCart: false,
       totalPrice: 0,
-      cart: [],
+      cart: this?.props?.value || [],
     };
     this.showMyCart = this.showMyCart.bind(this);
   }
@@ -23,6 +25,8 @@ class Navbar extends Component {
     }));
   }
   render() {
+    const context = this.context;
+
     return (
       <>
         <Container>
@@ -40,16 +44,7 @@ class Navbar extends Component {
               )
             );
           })}
-          {/* {navbar.map(({path, hidden , id, title }) => {
-          return <NavLink
-              key={id}
-              to={path}
-              className="navlink"
-              style={({ isActive }) => (isActive ? active : {})}
-            >
-              <Container.Title>{title}</Container.Title>
-            </NavLink>
-  }))} */}
+
           <Container.Title style={{ width: "65%" }}>
             <Logo src={logo} alt="Logo" />
           </Container.Title>
@@ -68,12 +63,16 @@ class Navbar extends Component {
                 <Container.Cart>
                   <Container.CartText>
                     My Bag:
-                    <h5>{this.state.cart.length} items</h5>
+                    <h5>{context?.cart?.length} items</h5>
                   </Container.CartText>
 
                   <h5>Total:{this.state.totalPrice}</h5>
                   <Select.BtnDiv>
-                    <Select.Button>View bag</Select.Button>
+                    <Select.Button>
+                      <Link to={"/productdescription"} className="navlink">
+                        View bag
+                      </Link>
+                    </Select.Button>
                     <Select.Button green>Check out</Select.Button>
                   </Select.BtnDiv>
                 </Container.Cart>
