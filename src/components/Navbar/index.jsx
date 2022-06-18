@@ -24,6 +24,7 @@ class Navbar extends Component {
       jpy: "",
       showCart: false,
       totalPrice: 0,
+      valute: "$",
       cart: this?.props?.value || [],
     };
     this.showMyCart = this.showMyCart.bind(this);
@@ -62,8 +63,9 @@ class Navbar extends Component {
   render() {
     const context = this.context;
     const onSelect = (e) => {
-      console.log(e?.target?.value, "selected");
+      this.setState({ valute: e.target.value });
     };
+
     return (
       <>
         <Container>
@@ -87,9 +89,9 @@ class Navbar extends Component {
           </Container.Title>
           <Container.Title>
             <Select onChange={onSelect}>
-              <option value="usd">$</option>
-              <option value="eur">€</option>
-              <option value="jpy">¥</option>
+              <option value="$">$</option>
+              <option value="€">€</option>
+              <option value="¥">¥</option>
             </Select>
             <Logo.Icon
               onClick={() => this.showMyCart()}
@@ -107,7 +109,11 @@ class Navbar extends Component {
                       <CartItems key={index}>
                         <CartItems.Description>
                           <span> {value?.title}</span>
-                          <h4>{value?.price}</h4>
+                          <h4>
+                            {this.state.valute}
+                            {""}
+                            {value?.price}
+                          </h4>
                           Size:
                           <div style={{ display: "flex", gap: "4px" }}>
                             {value?.size.map((val, index) => (
