@@ -21,7 +21,6 @@ class Men extends Component {
   render() {
     const context = this.context;
     function onHandle(val) {
-      // console.log(val, "hheehehehehehe");
       var tot = context.cart.push(val);
       return tot;
     }
@@ -32,7 +31,7 @@ class Men extends Component {
           (value) =>
             value?.category === "men" && (
               <>
-                <Card key={value.id} className="card">
+                <Card key={value?.id} className="card">
                   <CardImg src={value?.src} alt="image" />
                   <AddCard className="mini" onClick={() => onHandle(value)}>
                     <CardImg cart src={cart} alt="add to cart" />

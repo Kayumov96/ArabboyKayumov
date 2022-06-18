@@ -12,15 +12,16 @@ import {
 } from "./style";
 import logo from "../../assets/img/logo.png";
 import MainContext from "../Context";
+import Cart from "../Cart";
 
 class Navbar extends Component {
   static contextType = MainContext;
   constructor(props) {
     super(props);
     this.state = {
-      EUR: "",
-      USD: "",
-      JPY: "",
+      eur: "",
+      usd: "",
+      jpy: "",
       showCart: false,
       totalPrice: 0,
       cart: this?.props?.value || [],
@@ -33,7 +34,7 @@ class Navbar extends Component {
     }));
   }
   getColor(type) {
-    console.log(type, "rang");
+    // console.log(type, "rang");
     switch (type) {
       case "grey":
         return <Colors grey />;
@@ -60,7 +61,9 @@ class Navbar extends Component {
   }
   render() {
     const context = this.context;
-
+    const onSelect = (e) => {
+      console.log(e?.target?.value, "selected");
+    };
     return (
       <>
         <Container>
@@ -83,10 +86,10 @@ class Navbar extends Component {
             <Logo src={logo} alt="Logo" />
           </Container.Title>
           <Container.Title>
-            <Select>
-              <option value="USD">$</option>
-              <option value="EUR">€</option>
-              <option value="JPY">¥</option>
+            <Select onChange={onSelect}>
+              <option value="usd">$</option>
+              <option value="eur">€</option>
+              <option value="jpy">¥</option>
             </Select>
             <Logo.Icon
               onClick={() => this.showMyCart()}

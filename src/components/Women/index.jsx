@@ -18,7 +18,7 @@ class Women extends Component {
   render() {
     const context = this.context;
     function onHandle(val) {
-      // console.log(val, "hheehehehehehe");
+      console.log(val, "hheehehehehehe");
       var tot = context.cart.push(val);
       return tot;
     }
