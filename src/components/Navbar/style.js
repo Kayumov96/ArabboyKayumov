@@ -88,6 +88,7 @@ Logo.Icon = styled(cart1)`
   width: 20px;
   height: 18px;
   cursor: pointer;
+  z-index: 1;
 `;
 const Select = styled.select`
   outline: none;
@@ -150,6 +151,19 @@ CartItems.Description = styled.div`
 CartItems.Img = styled.img`
   width: 44%;
   height: 100%;
+`;
+CartItems.Amount = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1d1f22;
+  color: #ffffff;
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 const handleColor = (type) => {
   switch (type) {

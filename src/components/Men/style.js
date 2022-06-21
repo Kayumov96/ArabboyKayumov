@@ -27,7 +27,7 @@ const Card = styled.div`
   padding-bottom: 15px;
   width: 250px;
   max-width: var(--width);
-  height: ;
+  /* height: ; */
   cursor: pointer;
   :hover {
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);

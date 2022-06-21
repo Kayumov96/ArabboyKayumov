@@ -63,7 +63,9 @@ class Navbar extends Component {
   render() {
     const context = this.context;
     const onSelect = (e) => {
-      this.setState({ valute: e.target.value });
+      console.log(context.priceType, e);
+      // this.setState(contex.priceType= e.target.value );
+      // this.setState({ valute: e.target.value });
     };
 
     return (
@@ -93,10 +95,13 @@ class Navbar extends Component {
               <option value="€">€</option>
               <option value="¥">¥</option>
             </Select>
-            <Logo.Icon
-              onClick={() => this.showMyCart()}
-              cartitems={this.state.cart}
-            />
+            <div style={{ position: "relative" }}>
+              <Logo.Icon
+                onClick={() => this.showMyCart()}
+                cartitems={this.state.cart}
+              />
+              <CartItems.Amount>{this?.context?.cart.length}</CartItems.Amount>
+            </div>
             {this.state.showCart && (
               <Container.CartWrapper>
                 <Container.Cart>
@@ -104,9 +109,9 @@ class Navbar extends Component {
                     My Bag:
                     <h5>{context?.cart?.length} items</h5>
                   </Container.CartText>
-                  {context?.cart.map((value, index) => {
+                  {context?.cart.map((value) => {
                     return (
-                      <CartItems key={index}>
+                      <CartItems key={value.id}>
                         <CartItems.Description>
                           <span> {value?.title}</span>
                           <h4>

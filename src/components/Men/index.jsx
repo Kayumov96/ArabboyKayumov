@@ -4,6 +4,7 @@ import cart from "../../assets/icons/cart.svg";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 import { data } from "../../mock/mock";
 import MainContext from "../Context";
+import { NavLink } from "react-router-dom";
 
 class Men extends Component {
   static contextType = MainContext;
@@ -13,6 +14,7 @@ class Men extends Component {
       pdp: false,
     };
   }
+
   showPdp() {
     this.setState((state) => ({
       pdp: !state.pdp,
@@ -32,12 +34,17 @@ class Men extends Component {
             value?.category === "men" && (
               <>
                 <Card key={value?.id} className="card">
-                  <CardImg src={value?.src} alt="image" />
+                  <NavLink to={"/productdescription"}>
+                    <CardImg src={value?.src} alt="image" />
+                  </NavLink>
                   <AddCard className="mini" onClick={() => onHandle(value)}>
                     <CardImg cart src={cart} alt="add to cart" />
                   </AddCard>
                   <Header mini>{value?.title}</Header>
-                  <h4>${value?.price}</h4>
+                  <h4>
+                    {console.log(this.props, "valyuta")}
+                    {value?.price}
+                  </h4>
                 </Card>
               </>
             )
