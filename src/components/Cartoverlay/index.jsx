@@ -13,9 +13,8 @@ import {
 import logo from "../../assets/img/logo.png";
 import MainContext from "../Context";
 import Cart from "../Cart";
-import CartOverlay from "../Cartoverlay";
 
-class Navbar extends Component {
+class CartOverlay extends Component {
   static contextType = MainContext;
   constructor(props) {
     super(props);
@@ -67,6 +66,7 @@ class Navbar extends Component {
     }
   }
   render() {
+    const { value } = this.props;
     const context = this.context;
     const onSelect = (e) => {
       console.log(context.priceType, e);
@@ -80,7 +80,7 @@ class Navbar extends Component {
     };
     return (
       <>
-        <Container>
+        {/* <Container>
           {navbar.map(({ path, id, title, hidden }) => {
             return (
               !hidden && (
@@ -120,48 +120,55 @@ class Navbar extends Component {
                     <h5>{context?.cart?.length} items</h5>
                   </Container.CartText>
                   {context?.cart.map((value) => {
-                    return (
-                      <CartOverlay value={value} />
-                      // <CartItems key={value.id}>
-                      //   <CartItems.Description>
-                      //     <span> {value?.title}</span>
-                      //     <h4>
-                      //       {this.state.valute}
-                      //       {""}
-                      //       {value?.price}
-                      //     </h4>
-                      //     Size:
-                      //     <div style={{ display: "flex", gap: "4px" }}>
-                      //       {value?.size.map((val, index) => (
-                      //         <Sizes key={index}>{val}</Sizes>
-                      //       ))}
-                      //     </div>
-                      //     Color:
-                      //     <div style={{ display: "flex", gap: "6px" }}>
-                      //       {value?.color.map((v) => (
-                      //         <Sizes>{this.getColor(v)}</Sizes>
-                      //       ))}
-                      //     </div>
-                      //   </CartItems.Description>
-                      //   <Select.BtnDiv
-                      //     style={{
-                      //       width: "8%",
-                      //       height: "100%",
-                      //       flexDirection: "column",
-                      //       padding: "6px 3px",
-                      //     }}
-                      //   >
-                      //     <Sizes>+</Sizes>
-                      //     {this.state.count}
-                      //     <Sizes>-</Sizes>
-                      //   </Select.BtnDiv>
-                      //   <CartItems.Img
-                      //     src={value.src}
-                      //     alt="product"
-                      //     // style={{ width: "25px" }}
-                      //   />
-                      // </CartItems>
-                    );
+                    return ( */}
+        <CartItems key={value.id}>
+          <CartItems.Description>
+            <span> {value?.title}</span>
+            <h4>
+              {this.state.valute}
+              {""}
+              {value?.price}
+            </h4>
+            Size:
+            <div style={{ display: "flex", gap: "4px" }}>
+              {value?.size.map((val, index) => (
+                <Sizes key={index}>{val}</Sizes>
+              ))}
+            </div>
+            Color:
+            <div style={{ display: "flex", gap: "6px" }}>
+              {value?.color.map((v) => (
+                <Sizes>{this.getColor(v)}</Sizes>
+              ))}
+            </div>
+          </CartItems.Description>
+          <Select.BtnDiv
+            style={{
+              width: "8%",
+              height: "100%",
+              flexDirection: "column",
+              padding: "6px 3px",
+            }}
+          >
+            <button
+              onClick={() => this.setState({ count: this.state.count + 1 })}
+            >
+              +
+            </button>
+            {this.state.count}
+            <button
+              onClick={() => this.setState({ count: this.state.count - 1 })}
+            >
+              -
+            </button>
+          </Select.BtnDiv>
+          <CartItems.Img
+            src={value.src}
+            alt="product"
+            // style={{ width: "25px" }}
+          />
+        </CartItems>
+        {/* );
                   })}
 
                   <h5>Total:{this.state.totalPrice}</h5>
@@ -178,10 +185,10 @@ class Navbar extends Component {
             )}
           </Container.Title>
         </Container>
-        <Outlet />
+        <Outlet /> */}
       </>
     );
   }
 }
 
-export default Navbar;
+export default CartOverlay;

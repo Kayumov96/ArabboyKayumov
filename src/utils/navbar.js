@@ -32,7 +32,7 @@ export const navbar = [
   {
     id: 4,
     title: "Product Description",
-    path: "/productdescription",
+    path: "/product",
     element: <DetailPage />,
     hidden: true,
     children: [],

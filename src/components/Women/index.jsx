@@ -34,7 +34,10 @@ class Women extends Component {
                   <CardImg cart src={cart} alt="add to cart" />
                 </AddCard>
                 <Header mini>{value?.title}</Header>
-                <h4>{value?.price}</h4>
+                <h4>
+                  {this.props?.valute}
+                  {value?.price}
+                </h4>
               </Card>
             )
         )}

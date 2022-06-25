@@ -4,7 +4,8 @@ import cart from "../../assets/icons/cart.svg";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 import { data } from "../../mock/mock";
 import MainContext from "../Context";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import DetailPage from "../DetailProductPage";
 
 class Men extends Component {
   static contextType = MainContext;
@@ -22,9 +23,14 @@ class Men extends Component {
   }
   render() {
     const context = this.context;
+
     function onHandle(val) {
       var tot = context.cart.push(val);
       return tot;
+    }
+    function sendTo(value) {
+      var go = <DetailPage item={value} />;
+      return go;
     }
     return (
       <Container>
@@ -34,15 +40,24 @@ class Men extends Component {
             value?.category === "men" && (
               <>
                 <Card key={value?.id} className="card">
-                  <NavLink to={"/productdescription"}>
-                    <CardImg src={value?.src} alt="image" />
+                  <NavLink
+                    to={{
+                      pathname: `/product`,
+                      state: { value },
+                    }}
+                  >
+                    <CardImg
+                      src={value?.src}
+                      alt="image"
+                      onClick={() => sendTo(value)}
+                    />
                   </NavLink>
                   <AddCard className="mini" onClick={() => onHandle(value)}>
                     <CardImg cart src={cart} alt="add to cart" />
                   </AddCard>
                   <Header mini>{value?.title}</Header>
                   <h4>
-                    {console.log(this.props, "valyuta")}
+                    {/* {console.log(this.props, "valyuta")} */}
                     {value?.price}
                   </h4>
                 </Card>
