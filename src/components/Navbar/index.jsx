@@ -26,7 +26,7 @@ class Navbar extends Component {
       showCart: false,
       totalPrice: 0,
       valute: "$",
-      count: 1,
+      count: 0,
       cart: this?.props?.value || [],
     };
     this.showMyCart = this.showMyCart.bind(this);
@@ -120,48 +120,7 @@ class Navbar extends Component {
                     <h5>{context?.cart?.length} items</h5>
                   </Container.CartText>
                   {context?.cart.map((value) => {
-                    return (
-                      <CartOverlay value={value} />
-                      // <CartItems key={value.id}>
-                      //   <CartItems.Description>
-                      //     <span> {value?.title}</span>
-                      //     <h4>
-                      //       {this.state.valute}
-                      //       {""}
-                      //       {value?.price}
-                      //     </h4>
-                      //     Size:
-                      //     <div style={{ display: "flex", gap: "4px" }}>
-                      //       {value?.size.map((val, index) => (
-                      //         <Sizes key={index}>{val}</Sizes>
-                      //       ))}
-                      //     </div>
-                      //     Color:
-                      //     <div style={{ display: "flex", gap: "6px" }}>
-                      //       {value?.color.map((v) => (
-                      //         <Sizes>{this.getColor(v)}</Sizes>
-                      //       ))}
-                      //     </div>
-                      //   </CartItems.Description>
-                      //   <Select.BtnDiv
-                      //     style={{
-                      //       width: "8%",
-                      //       height: "100%",
-                      //       flexDirection: "column",
-                      //       padding: "6px 3px",
-                      //     }}
-                      //   >
-                      //     <Sizes>+</Sizes>
-                      //     {this.state.count}
-                      //     <Sizes>-</Sizes>
-                      //   </Select.BtnDiv>
-                      //   <CartItems.Img
-                      //     src={value.src}
-                      //     alt="product"
-                      //     // style={{ width: "25px" }}
-                      //   />
-                      // </CartItems>
-                    );
+                    return <CartOverlay value={value} />;
                   })}
 
                   <h5>Total:{this.state.totalPrice}</h5>

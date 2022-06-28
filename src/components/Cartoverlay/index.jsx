@@ -1,18 +1,6 @@
 import React, { Component } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
-import { navbar } from "../../utils/navbar";
-import {
-  active,
-  CartItems,
-  Colors,
-  Container,
-  Logo,
-  Select,
-  Sizes,
-} from "./style";
-import logo from "../../assets/img/logo.png";
+import { Btn, CartItems, Colors, Select, Sizes } from "./style";
 import MainContext from "../Context";
-import Cart from "../Cart";
 
 class CartOverlay extends Component {
   static contextType = MainContext;
@@ -80,47 +68,6 @@ class CartOverlay extends Component {
     };
     return (
       <>
-        {/* <Container>
-          {navbar.map(({ path, id, title, hidden }) => {
-            return (
-              !hidden && (
-                <NavLink
-                  key={id}
-                  to={path}
-                  className="navlink"
-                  style={({ isActive }) => (isActive ? active : {})}
-                >
-                  <Container.Title>{title}</Container.Title>
-                </NavLink>
-              )
-            );
-          })}
-
-          <Container.Title style={{ width: "65%" }}>
-            <Logo src={logo} alt="Logo" />
-          </Container.Title>
-          <Container.Title>
-            <Select onChange={onSelect}>
-              <option value="$">$</option>
-              <option value="€">€</option>
-              <option value="¥">¥</option>
-            </Select>
-            <div style={{ position: "relative" }}>
-              <Logo.Icon
-                onClick={() => this.showMyCart()}
-                cartitems={this.state.cart}
-              />
-              <CartItems.Amount>{this?.context?.cart.length}</CartItems.Amount>
-            </div>
-            {this.state.showCart && (
-              <Container.CartWrapper>
-                <Container.Cart>
-                  <Container.CartText>
-                    My Bag:
-                    <h5>{context?.cart?.length} items</h5>
-                  </Container.CartText>
-                  {context?.cart.map((value) => {
-                    return ( */}
         <CartItems key={value.id}>
           <CartItems.Description>
             <span> {value?.title}</span>
@@ -150,17 +97,13 @@ class CartOverlay extends Component {
               padding: "6px 3px",
             }}
           >
-            <button
-              onClick={() => this.setState({ count: this.state.count + 1 })}
-            >
+            <Btn onClick={() => this.setState({ count: this.state.count + 1 })}>
               +
-            </button>
+            </Btn>
             {this.state.count}
-            <button
-              onClick={() => this.setState({ count: this.state.count - 1 })}
-            >
+            <Btn onClick={() => this.setState({ count: this.state.count - 1 })}>
               -
-            </button>
+            </Btn>
           </Select.BtnDiv>
           <CartItems.Img
             src={value.src}
@@ -168,24 +111,6 @@ class CartOverlay extends Component {
             // style={{ width: "25px" }}
           />
         </CartItems>
-        {/* );
-                  })}
-
-                  <h5>Total:{this.state.totalPrice}</h5>
-                  <Select.BtnDiv>
-                    <Select.Button>
-                      <Link to={"/cart"} className="navlink">
-                        View bag
-                      </Link>
-                    </Select.Button>
-                    <Select.Button green>Check out</Select.Button>
-                  </Select.BtnDiv>
-                </Container.Cart>
-              </Container.CartWrapper>
-            )}
-          </Container.Title>
-        </Container>
-        <Outlet /> */}
       </>
     );
   }

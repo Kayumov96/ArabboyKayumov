@@ -42,7 +42,7 @@ class Men extends Component {
                 <Card key={value?.id} className="card">
                   <NavLink
                     to={{
-                      pathname: `/product`,
+                      pathname: `/product/${value?.id}`,
                       state: { value },
                     }}
                   >

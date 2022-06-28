@@ -1,95 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as cart1 } from "../../assets/icons/cart1.svg";
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  width: 75%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  padding: 0 12.5%;
-  height: 80px;
-  justify-content: space-between;
-  justify-content: center;
-  @media (max-width: 768px) {
-    padding: 0 8px;
-    width: 90%;
-    margin-bottom: 10%;
-    justify-content: space-around;
-  }
-`;
-Container.Title = styled.div`
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 79px;
-  font-size: 16px;
-  line-height: 19px;
-  @media (max-width: 768px) {
-    width: 60px;
-  }
-`;
-Container.CartWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 79px;
-  left: 0;
-  z-index: 1;
-  background: rgba(57, 55, 72, 0.22);
-`;
-Container.CartText = styled.div`
-  width: inherit;
-  height: 25px;
-  font-weight: 700;
-  display: flex;
-  gap: 5px;
-  font-size: 16px;
-  position: fixed;
-  top: 78px;
-  background: #ffffff;
-`;
-Container.Cart = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 32px 16px 0px 16px;
-  position: relative;
-  width: 325px;
-  position: relative;
-  max-height: 500px;
-  overflow: scroll;
-  left: 800px;
-  top: 0px;
-  z-index: 1;
-  background: #ffffff;
-  @media (max-width: 786px) {
-    right: -40%;
-  }
-  @media (min-width: 1024px) {
-    left: 60%;
-  }
-  @media (max-width: 1024px) {
-    left: 60%;
-  }
-  @media (min-width: 1440px) {
-    left: 74%;
-  }
-`;
-const Logo = styled.img`
-  width: 31px;
-  height: 28px;
-`;
-Logo.Icon = styled(cart1)`
-  width: 20px;
-  height: 18px;
-  cursor: pointer;
-  z-index: 1;
-`;
 const Select = styled.select`
   outline: none;
   border: none;
@@ -129,11 +40,6 @@ Select.BtnDiv = styled.div`
   position: sticky;
   bottom: 0;
 `;
-const active = {
-  color: "#5ECE7B",
-  borderBottom: "2px solid #5ECE7B",
-  fontWeight: "600",
-};
 
 const CartItems = styled.div`
   margin: 8px 0;
@@ -202,9 +108,13 @@ const Sizes = styled.div`
     color: #ffffff;
   } */
 `;
+const Btn = styled.button`
+  width: 20px;
+  height: 20px;
+`;
 const Colors = styled.div`
   width: 26px;
   background-color: ${({ type }) => handleColor(type) || "#696969"};
   height: 26px;
 `;
-export { Container, Sizes, Logo, Select, active, CartItems, Colors };
+export { Btn, Sizes, Select, CartItems, Colors };
