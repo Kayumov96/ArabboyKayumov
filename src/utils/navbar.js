@@ -42,5 +42,6 @@ export const navbar = [
     path: "/cart",
     element: <Cart />,
     children: [],
+    hidden: true,
   },
 ];

@@ -15,7 +15,6 @@ class Men extends Component {
       pdp: false,
     };
   }
-
   showPdp() {
     this.setState((state) => ({
       pdp: !state.pdp,
@@ -28,9 +27,10 @@ class Men extends Component {
       var tot = context.cart.push(val);
       return tot;
     }
+
     function sendTo(value) {
-      var go = <DetailPage item={value} />;
-      return go;
+      this?.props?.navigation?.navigate("Details", { ...value });
+      // <NavLink to={{pathname: `/product/${value?.id`}, state:value}}
     }
     return (
       <Container>
@@ -39,19 +39,19 @@ class Men extends Component {
           (value) =>
             value?.category === "men" && (
               <>
-                <Card key={value?.id} className="card">
-                  <NavLink
+                <Card
+                  key={value?.id}
+                  className="card"
+                  onClick={() => sendTo(value)}
+                >
+                  {/* <NavLink
                     to={{
                       pathname: `/product/${value?.id}`,
                       state: { value },
                     }}
-                  >
-                    <CardImg
-                      src={value?.src}
-                      alt="image"
-                      onClick={() => sendTo(value)}
-                    />
-                  </NavLink>
+                  > */}
+                  <CardImg src={value?.src} alt="image" />
+                  {/* </NavLink> */}
                   <AddCard className="mini" onClick={() => onHandle(value)}>
                     <CardImg cart src={cart} alt="add to cart" />
                   </AddCard>

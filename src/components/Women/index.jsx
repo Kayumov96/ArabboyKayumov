@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 import cart from "../../assets/icons/cart.svg";
 import { data } from "../../mock/mock";
-import Navbar from "../Navbar";
+
 import MainContext from "../Context";
 // import { NavLink, useNavigate, useNavigationType } from "react-router-dom";
 
@@ -34,10 +34,7 @@ class Women extends Component {
                   <CardImg cart src={cart} alt="add to cart" />
                 </AddCard>
                 <Header mini>{value?.title}</Header>
-                <h4>
-                  {this.props?.valute}
-                  {value?.price}
-                </h4>
+                <h4>{value?.price}</h4>
               </Card>
             )
         )}

@@ -31,10 +31,7 @@ class Navbar extends Component {
     };
     this.showMyCart = this.showMyCart.bind(this);
   }
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps?.cart !== this?.context?.cart)
-  //     this.fetchData(this.context?.cart);
-  // }
+
   showMyCart() {
     this.setState((state) => ({
       showCart: !state.showCart,
@@ -66,6 +63,7 @@ class Navbar extends Component {
         break;
     }
   }
+
   render() {
     const context = this.context;
     const onSelect = (e) => {

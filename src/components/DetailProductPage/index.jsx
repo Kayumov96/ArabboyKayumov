@@ -10,9 +10,9 @@ class DetailPage extends Component {
     return (
       <div>
         <h1> Detail page</h1>
-        {/* {this.props?.state?.value?.map((val) => {
+        {this.props?.map((val) => {
           return console.log(val, "detail");
-        })} */}
+        })}
       </div>
     );
   }

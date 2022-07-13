@@ -7,26 +7,26 @@ class CartOverlay extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eur: "",
-      usd: "",
-      jpy: "",
-      showCart: false,
-      totalPrice: 0,
-      valute: "$",
+      // eur: "",
+      // usd: "",
+      // jpy: "",
+      // showCart: false,
+      // totalPrice: 0,
+      // valute: "$",
       count: 1,
-      cart: this?.props?.value || [],
+      // cart: this?.props?.value || [],
     };
-    this.showMyCart = this.showMyCart.bind(this);
+    // this.showMyCart = this.showMyCart.bind(this);
   }
   // componentDidUpdate(prevProps) {
   //   if (prevProps?.cart !== this?.context?.cart)
   //     this.fetchData(this.context?.cart);
   // }
-  showMyCart() {
-    this.setState((state) => ({
-      showCart: !state.showCart,
-    }));
-  }
+  // showMyCart() {
+  //   this.setState((state) => ({
+  //     showCart: !state.showCart,
+  //   }));
+  // }
   getColor(type) {
     // console.log(type, "rang");
     switch (type) {
@@ -55,17 +55,7 @@ class CartOverlay extends Component {
   }
   render() {
     const { value } = this.props;
-    const context = this.context;
-    const onSelect = (e) => {
-      console.log(context.priceType, e);
-      // this.setState(contex.priceType= e.target.value );
-      this.setState({ valute: e.target.value });
-    };
-    const handlePrice = () => {
-      let price = 0;
-      context?.map((item) => (price += item.length * item.price));
-      this.setState({ totalPrice: price });
-    };
+    // const context = this.context;
     return (
       <>
         <CartItems key={value.id}>
