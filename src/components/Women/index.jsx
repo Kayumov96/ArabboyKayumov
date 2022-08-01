@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 import cart from "../../assets/icons/cart.svg";
 import { data } from "../../mock/mock";
-
 import MainContext from "../Context";
+import { Link, NavLink } from "react-router-dom";
 // import { NavLink, useNavigate, useNavigationType } from "react-router-dom";
 
 class Women extends Component {
@@ -25,7 +25,9 @@ class Women extends Component {
           (value) =>
             value?.category === "women" && (
               <Card key={value.id} className="card">
-                <CardImg src={value?.src} alt="image" />
+                <Link to={`/details?id=${value.id}`} params={value} target="_blank">
+                  <CardImg src={value?.src} alt="image" />
+                </Link>
                 <AddCard className="mini" onClick={() => onHandle(value)}>
                   <CardImg cart src={cart} alt="add to cart" />
                 </AddCard>

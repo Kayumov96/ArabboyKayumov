@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import cart from "../../assets/icons/cart.svg";
 import { data } from "../../mock/mock";
 import MainContext from "../Context";
-
+import { Link, NavLink } from "react-router-dom";
 import { AddCard, Card, CardImg, Container, Header } from "./style";
 
 class Kids extends Component {
@@ -16,6 +16,8 @@ class Kids extends Component {
   AddCard(id) {
     this.setState();
   }
+
+
   render() {
     const context = this.context;
     function onHandle(val) {let eq=false;for(let i in  context.cart) {if (context.cart[i].id == val.id) {eq=true; break;};};if(!eq) {var tot = context.cart.push(val); context.total+=parseFloat(val.price); document.getElementById("items-count").innerText = context.cart.length;return tot;};};
@@ -27,7 +29,9 @@ class Kids extends Component {
           (value) =>
             value?.category === "kids" && (
               <Card key={value.id} className="card">
-                <CardImg src={value?.src} alt="image" />
+                <Link to={`/details?id=${value.id}`} params={value} target="_blank">
+                  <CardImg src={value?.src} alt="image" />
+                </Link>
                 <AddCard className="mini">
                   <CardImg
                     cart
