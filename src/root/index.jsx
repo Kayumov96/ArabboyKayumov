@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { navbar } from "../utils/navbar";
 import Error from "../components/NotFound";
 import MainContext from "../components/Context";
+import DetailPage from "../components/DetailProductPage";
 
 class Root extends Component {
   state = { cart: [], setCart: this.setCart, priceType: this.priceType };
@@ -26,6 +27,7 @@ class Root extends Component {
             ))}
             <Route path="/" element={<Navigate to={"/men"} />} />
           </Route>
+          <Route path="/details" element={<DetailPage />} />
           <Route exact path="*" element={<Error />} />
         </Routes>
       </MainContext.Provider>

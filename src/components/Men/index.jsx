@@ -22,11 +22,7 @@ class Men extends Component {
   }
   render() {
     const context = this.context;
-
-    function onHandle(val) {
-      var tot = context.cart.push(val);
-      return tot;
-    }
+    function onHandle(val) {let eq=false;for(let i in  context.cart) {if (context.cart[i].id == val.id) {eq=true; break;};};if(!eq) {var tot = context.cart.push(val); context.total+=parseFloat(val.price); document.getElementById("items-count").innerText = context.cart.length;return tot;};};
 
     function sendTo(value) {
       this?.props?.navigation?.navigate("Details", { ...value });
@@ -50,15 +46,21 @@ class Men extends Component {
                       state: { value },
                     }}
                   > */}
-                  <CardImg src={value?.src} alt="image" />
+                  
+                  <Link to={`/details?id=${value.id}`} params={value} target="_blank">
+                    <CardImg src={value?.src} alt="image" />
+                  </Link>
+
                   {/* </NavLink> */}
                   <AddCard className="mini" onClick={() => onHandle(value)}>
-                    <CardImg cart src={cart} alt="add to cart" />
+                    
+                      <CardImg cart src={cart} alt="add to cart" />
+                    
                   </AddCard>
                   <Header mini>{value?.title}</Header>
                   <h4>
                     {/* {console.log(this.props, "valyuta")} */}
-                    {value?.price}
+                    {value?.price} {localStorage.getItem("curr") ? localStorage.getItem("curr") : "$"}
                   </h4>
                 </Card>
               </>
